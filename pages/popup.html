@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>CRM Javascript Fiddle</title>
+	<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+</head>
+
+<body>
+	<h1 id="header"><img src="../img/crm_logo.png" id="crm-logo"/>CRM Javascript Fiddle</h1>
+	<div id="buttons">
+		<div class="button">
+			Snippets:
+			<select class="selectbox" id="snippets">
+				<option value=>New</option>
+			</select>
+		</div>
+        <div class="button">
+			Name:
+			<input class="input" id="snippet-name" maxlength="15" type="text"/>
+		</div>
+		<div class="button" id="save-snippet" title="Save Snippet"><img src="../img/save.png" /></div>
+		<div class="button" style="display:none"  id="delete" title="Delete Snippet"><img src="../img/delete.png" /></div>
+		<div class="button" id="run-code"><img src="../img/run.png" /><span style="padding-top: 3px;display: block;float: right;padding-right:3px;cursor:pointer!important">Run</span></div>
+	</div>
+	<pre id="editor">
+		alert("test");
+	</pre>
+    <div id="notification">
+    </div>
+	<script src="../lib/jquery-2.1.3.min.js"></script>
+	<script src="../lib/jquery.indexeddb.js"></script>
+	<script src="../lib/ace/ace.js"></script>
+	<script src="../lib/ace/ext-language_tools.js"></script>
+	<script src="../js/constants.js"></script>
+	<script src="../js/default-snippets.js"></script>
+	<script src="../js/js-code-player.js"></script>
+    <script src="../js/snippets-repository.js"></script>
+	<script src="../js/popup.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,3 @@
-//TODO: geçerli window content'ine Xrm libraryi at ve  web resoruce'ları kullanabil.
 var jsCodePlayer = {
 	getFunctionContent: function (func) {
 		var functionString = func.toString();

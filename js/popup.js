@@ -1,9 +1,9 @@
 (function ($) {
 	var snippets = [];
 	var aceEditor;
-    var fadeTime = 350;
-    var defaultNotificationTime = 1700;
-    
+	var fadeTime = 350;
+	var defaultNotificationTime = 1700;
+
 	ace.require("ace/ext/language_tools");
 	aceEditor = ace.edit("editor");
 	aceEditor.session.setMode("ace/mode/javascript");
@@ -41,12 +41,14 @@
 		snippetsRepository.fillSnippets(snippets).done(function () {
 			fillSelectBox();
 		}).always(function () {
-			if (!snippets.length) {
-				defaultSnippets.forEach(function (snippet) {
-					snippetsRepository.addSnippet(snippet.name, jsCodePlayer.getFunctionContent(snippet.code));
-				});
-                loadSnippets();
-			}
+			setTimeout(function () {
+				if (!snippets.length) {
+					defaultSnippets.forEach(function (snippet) {
+						snippetsRepository.addSnippet(snippet.name, jsCodePlayer.getFunctionContent(snippet.code));
+					});
+					loadSnippets();
+				}
+			}, 1000);
 		});
 
 	}

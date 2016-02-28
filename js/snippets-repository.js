@@ -43,15 +43,15 @@ var snippetsRepository = {
 		});
 	},
 	
-	addMultipleSnippet: function (arr) {
+	addMultipleSnippet: function (arr,callback) {
 		if (arr) {
 			if (arr.length > 1) {
-				this.addSnippet(arr[0].name, arr[0].code).done(function () {
+				debugger;
+					this.addSnippet(arr[0].name, arr[0].code);
 					arr.shift();
 					this.addMultipleSnippet(arr);
-				});
 			} else {
-				return this.addSnippet(arr[0].name, arr[0].code);
+				return this.addSnippet(arr[0].name, arr[0].code).done(callback);
 			}
 		}
 	},

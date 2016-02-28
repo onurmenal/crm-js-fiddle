@@ -1,7 +1,9 @@
 (function ($) {
 	var snippets = [];
 	var aceEditor;
-
+    var fadeTime = 350;
+    var defaultNotificationTime = 1700;
+    
 	ace.require("ace/ext/language_tools");
 	aceEditor = ace.edit("editor");
 	aceEditor.session.setMode("ace/mode/javascript");
@@ -41,18 +43,16 @@
 		}).always(function () {
 			if (!snippets.length) {
 				defaultSnippets.forEach(function (snippet) {
-					snippetsRepository.addSnippet(snippet.name, jsCodePlayer.getFunctionContent(snippet.code)).then(function () {
-						fillSelectBox();
-					});
+					snippetsRepository.addSnippet(snippet.name, jsCodePlayer.getFunctionContent(snippet.code));
 				});
+                loadSnippets();
 			}
 		});
 
 	}
 
 	function showNotification(type, message, messageTime) {
-		var fadeTime = 350;
-		messageTime = messageTime || 1700;
+		messageTime = messageTime || defaultNotificationTime;
 		var $notification = $("#notification");
 		$notification.removeClass();
 		$notification.addClass(type).text(message).fadeIn(fadeTime);

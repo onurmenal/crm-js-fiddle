@@ -12,10 +12,13 @@
 	aceEditor.setOptions({
 		enableBasicAutocompletion: true,
 		enableSnippets: true,
-		enableLiveAutocompletion: false
+		enableLiveAutocompletion: true
 	});
 	aceEditor.focus();
-	getLastOperation();
+    var xrmCompleter = ace.require("ace/xrm/completer");
+    aceEditor.completers.push(xrmCompleter.completer);
+    
+    getLastOperation();
 	loadSnippets();
 
 	function getLastOperation() {

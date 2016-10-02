@@ -4,4 +4,4 @@ In this way you can show hidden fields , you can enable and edit the disabled fi
 Also it provides storage support for your snippets.<br/>
 <br/>
 **[Chrome Web Store](https://chrome.google.com/webstore/detail/crm-javascript-fiddle/momdaameodaikfdopmnahbocjgmnlicf)
-![alt tag](https://github.com/onurmenal/crm-js-fiddle/blob/master/gifs/sample.gif)**
+![alt tag](https://raw.githubusercontent.com/onurmenal/crm-js-fiddle/master/Crm.JavascriptFiddle/gifs/sample.gif)**
